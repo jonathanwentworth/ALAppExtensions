@@ -352,6 +352,33 @@ codeunit 20352 "Connectivity App Definitions"
         RegisterApp(AppId, AppName, AppPublisher, AppDescription, AppProviderSupportURL, AppSourceURL, AppApprovedFor, AppWorksOn, "Connectivity Apps Category"::Banking);
     end;
 
+    local procedure RegisterYavrioOpenBanking()
+    var
+        AppId: Text[250];
+        AppName: Text[1024];
+        AppPublisher: Text[250];
+        AppDescription: Text[2048];
+        AppProviderSupportURL: Text[250];
+        AppSourceURL: Text[250];
+        AppWorksOn: Text;
+        AppApprovedFor: Text;
+    begin
+        /***************************************************
+            Add app 'Yavrio Open Banking' to GB
+        ***************************************************/
+
+        AppId := '3d686c04-e1b1-435e-bea4-862c2c203ca7';
+        AppName := 'Yavrio Open Banking';
+        AppPublisher := 'Yavrio';
+        AppDescription := 'Yavrio Open Banking uses industry-standard Open Banking technology to connect directly with your Bank Accounts. Using bank-grade security, you can draw down live feeds directly into Business Central, with no files required, and push payments directly from BC onto the Bank.';
+        AppProviderSupportURL := 'https://yavr.io/bank-coverage/';
+        AppSourceUrl := 'https://appsource.microsoft.com/en-us/product/dynamics-365-business-central/PUBID.yavrioltd1647526263468%7CAID.yavrio_open_banking%7CPAPPID.3d686c04-e1b1-435e-bea4-862c2c203ca7';
+        AppApprovedFor := 'GB';
+        AppWorksOn := 'GB';
+
+        RegisterApp(AppId, AppName, AppPublisher, AppDescription, AppProviderSupportURL, AppSourceURL, AppApprovedFor, AppWorksOn, "Connectivity Apps Category"::Banking);
+    end;
+
     internal procedure GetConnectivityAppDefinitions(var ConnectivityApps: Record "Connectivity App"; var ApprovedConnectivityAppCountry: Record "Conn. App Country/Region"; var WorksOnConnectivityAppCountry: Record "Conn. App Country/Region")
     begin
         LoadData();
